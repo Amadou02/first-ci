@@ -1,0 +1,17 @@
+name: CI NodeJS
+on: 
+  push: 
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout git
+        uses: actions/checkout@v6
+      - name: set up node.js
+        uses: actions/setup-node@6.3.0
+        with:
+          node-version: 24.12.0
+      - name: run node
+        run: node -v
+       
